@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="appHttp">
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX HTTP</title>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+
+  <body>
+
+    <div ng-controller="controllerHttp">
+
+
+      <hr>
+          <input type="text" ng-model="newPost.title">
+            <br>
+          <textarea ng-model="newPost.body" rows="8" cols="40"></textarea>
+            <br>
+          <button ng-click="addPost()">Agregar Post</button>
+      <hr>
+
+
+        <ul>
+          <li ng-repeat="post in posts">
+            {{post.albumId}} - <strong>{{post.title}}</strong>
+            - <br>{{post.url}} - <h1>{{post.body}}</h1>
+            - <br><b>{{post.thumbnailUrl}}</b><br><br>
+          </li>
+        </ul>
+    </div>
+
+  </body>
+
+<script src="js/controller.js"></script>
+</html>

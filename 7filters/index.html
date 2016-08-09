@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="filters">
+  <head>
+    <meta charset="utf-8">
+    <title>FILTERS</title>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/controller.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+
+  <body ng-controller="filtersController">
+    <h1>Quitar etiquetas</h1> <!--Personalizado, no funciona-->
+      {{mi_html1 | removeHtml}}
+      <br><hr>
+    <h1>Represetar texto como Json</h1>
+      {{ mi_html2 | json }}
+      <br><hr>
+    <h1>Represetar texto como Json</h1>
+      <h3><b>{{ costo1 | currency }}</b></h3>
+      <h3><b>{{ costo2 | currency: '€' }}</b></h3>
+      <h3><b>{{ costo3 | currency: '!' }}</b></h3>
+      <h3><b>{{ costo4 | currency: '$' }}</b></h3>
+      <h3><b>{{ costo5 | currency: '?' }}</b></h3>
+  </body>
+  <script src="js/angular.min.js"></script>
+</html>

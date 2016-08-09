@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+  <head>
+    <meta charset="utf-8">
+    <title>EJEMPLO DE APPLY</title>
+
+    <script src="js/angular.min.js"></script>
+    <script>
+      angular.module("mainModule",[])
+             .controller("firstController",function($scope){
+               $scope.ejemploUno = "ARLEY"
+               $scope.ejemploDos = "ARLEY";
+               $scope.ejemploTres = "ARLEY";
+
+             /*EJEMPLO UNO*/
+               setTimeout(function(){
+                  $scope.$apply(function(){
+                    $scope.ejemploUno = ("MARÍA CAMILA");
+                    console.log($scope.ejemploUno);
+                  });
+               },2000);
+             /*FIN EJEMPLO UNO*/
+
+
+             /*EJEMPLO DOS*/
+               /*Cuándo no usamos Jquery, podemos hacer eventos de esta amnera: */
+               document.querySelector("#my_boton").addEventListener("click",function(){
+                 $scope.$apply(function(){
+                    $scope.ejemploDos  = "MARÍA CAMILA";
+                 });
+               });
+            /*FIN EJEMPLO DOS*/
+
+             });
+    </script>
+    <!--<script src="js/controller.js"></script>-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+
+  <body ng-controller="firstController">
+
+    <h1>EJEMPLO 1</h1>
+    <h3>{{"Hola "}} <b>{{ejemploUno + "!"}}</b></h3>
+    <h3>Automático</h3>
+
+    <hr>
+
+    <h1>EJEMPLO 2</h1>
+    <h3>{{"Hola "}} <b>{{ejemploDos + "!"}}</b></h3>
+    <button id="my_boton">FORMA $APPLY</button>
+
+    <hr>
+
+    <h1>EJEMPLO 3</h1>
+    <h3>{{"Hola "}} <b>{{ejemploTres + "!"}}</b></h3>
+    <button ng-click="ejemploTres = 'MARÍA CAMILA'">FORMA NG-CLICK</button>
+
+
+  </body>
+  <script src="js/angular.min.js"></script>
+</html>

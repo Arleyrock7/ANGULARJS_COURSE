@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="loadingApp">
+  <head>
+    <meta charset="utf-8">
+    <title>CARGANDO...</title>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
+    <style>
+      .animated {
+        opacity: 1;
+        max-height: auto;
+        overflow: hidden;
+        transition: all 2s;
+      }
+      .animated.ng-hide {
+        opacity: 0;
+        max-height: 0px !important;
+        display: block !important;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div ng-controller="controllerLoading">
+
+        <div ng-show="loading"><img src="images/loading.gif" alt="" /></div>
+        <div ng-show="!loading && posts.length <= 0">No se encontrarón resultados</div>
+
+        <ul ng-show="posts.length > 0" class="animated">
+          <li ng-repeat="post in posts">
+            <b>{{post.title}}</b>
+            <br>
+            - {{post.title}}
+            <br><br>
+          </li>
+        </ul>
+    </div>
+
+  </body>
+
+<script src="js/controller.js"></script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="appDatosEstudiantes">
+  <head>
+    <meta charset="utf-8">
+    <title>MODULOS ANGULARJSS</title>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+
+  <body>
+    <div ng-controller="nombreEstudianteController">
+      <h1>{{"Buen día estudiante " + nombreEstudiante}}</h1>
+    </div>
+    <div ng-controller="datosAdicionalesController">
+      <h3>{{"Edad: " + datosEdad}}<br>
+      </h3>
+    </div>
+    <div ng-controller="cursosController">
+      <h3><b>{{"Curso: " + cursos}}</b></h3>
+    </div>
+  </body>
+
+<script src="js/controller.js"></script>
+</html>

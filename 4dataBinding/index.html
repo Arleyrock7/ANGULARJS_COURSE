@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="appDatosEstudiantes">
+  <head>
+    <meta charset="utf-8">
+    <title>MODULOS ANGULARJSS</title>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+
+  <body>
+    <div ng-controller="comentariosController">
+      <h3>Ingresa nombre <input type="text" ng-model="nombreEstudiante"></h3>
+      <h1>{{"Buen día estudiante " + nombreEstudiante}}</h1>
+
+      <hr>
+
+<!--AGREGAR NUEVOS COMENTARIOS -->
+      <h2>AGREGAR NUEVOS COMENTARIOS</h2>
+      Comentario: <br> <input type="text" ng-model="nuevoCOMENTARIO.comentario">
+        <br>
+      Nombre: <br> <input type="text" ng-model="nuevoCOMENTARIO.userName">
+        <br><br>
+      <button ng-click="agregarComentario()">Agregar comentario</button>
+<!--END AGREGAR NUEVOS COMENTARIOS -->
+
+      <H3>COMENTARIOS!!!</h3>
+        <ul>
+          <li ng-repeat="COMENTARIO in comentarios">
+            {{COMENTARIO.comentario}}
+            - <strong>{{COMENTARIO.userName}}</strong>
+          </li>
+        </ul>
+        <hr>
+
+
+
+<hr>
+<h1>COMENTARIOS PRUEBA</h1>
+<ul ng-repeat="comments in comentariosPrueba">
+  <li>{{comments.comentario2}}
+    - <strong>{{comments.usuario}}</strong></li>
+</ul>
+
+
+    </div>
+  </body>
+
+<script src="js/controller.js"></script>
+</html>
